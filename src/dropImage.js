@@ -41,23 +41,21 @@ var dropImage = function(event) {
             }
 
             var reader = new FileReader();
-            reader.onload = function(readerEvent) {
-                var binaryString = readerEvent.target.result;
-
+            reader.onloadend = function() {
                 // creates img tag with file content
                 var img = document.createElement('img');
-                img.setAttribute('src', 'data:;base64,' + btoa(binaryString));
+                img.setAttribute('src', reader.result);
 
                 // places img tag
                 if (node && node.nodeType === 3) {
                     var replacementNode = node.splitText(offset);
                     node.parentNode.insertBefore(img, replacementNode);
                 } else if (node) {
-                    node.insertBefore(img, node.childNodes[offset]);
+                    document.getElementById('editor').insertBefore(img, null)
                 }
             };
 
-            reader.readAsBinaryString(file);
+            reader.readAsDataURL(file);
         }
     }
 
