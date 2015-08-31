@@ -10,6 +10,8 @@ module.exports = {
 
         browser.keys([browser.Keys.CONTROL, 'b']);
 
+        browser.keys([browser.Keys.CONTROL]);
+
         browser.setValue('#editor', 'asd');
 
         browser.expect.element('#editor b').to.be.present;
