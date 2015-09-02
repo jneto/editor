@@ -50,8 +50,12 @@ var dropImage = function(event) {
                 if (node && node.nodeType === 3) {
                     var replacementNode = node.splitText(offset);
                     node.parentNode.insertBefore(img, replacementNode);
-                } else if (node) {
-                    document.getElementById('editor').insertBefore(img, null)
+                } else {
+                    if (node.childNodes[offset]) {
+                        node.insertBefore(img, node.childNodes[offset]);
+                    } else {
+                        node.insertBefore(img, null);
+                    }
                 }
             };
 
