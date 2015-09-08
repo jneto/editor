@@ -34,24 +34,10 @@ Para subir o servidor execute:
 
 ###Testes
 
-Para rodar os testes é necessário baixar o selenium-server-standalone-[version].jar [daqui](http://selenium-release.storage.googleapis.com/index.html), e adicioná-lo na pasta bin.
+Para rodar os testes é necessário baixar o selenium-server-standalone-[version].jar [daqui](http://selenium-release.storage.googleapis.com/index.html) e o chromedriver [daqui](http://chromedriver.storage.googleapis.com/index.html), e adicioná-los na pasta bin.
 
-Eu baixei a versão 2.47.1 [daqui](http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar). Se você baixou uma versão diferente, altere a opção selenium.serverPath em nightwatch.json.
+Eu baixei a versão 2.19 do chromedriver e a versão 2.47.1 [daqui](http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar). Se você baixou uma versão diferente do selenium-server-standalone, altere a opção selenium.serverPath em nightwatch.json.
 
-Para executar os testes, suba o servidor e execute o comando:
+Para executar os testes:
 
-    $ node nightwatch.js
-
-####Chrome
-
-Para rodar os testes no chrome é necessário baixar o chromedriver [daqui](http://chromedriver.storage.googleapis.com/index.html), e adicioná-lo na pasta bin.
-
-Eu baixei a versão 2.19.
-
-Para executar os testes, suba o servidor e execute o comando:
-
-    $ node nightwatch.js -e chrome
-
-Para executar os testes no chrome e no firefox:
-
-    $ node nightwatch.js -e default,chrome
+    $ grunt test
